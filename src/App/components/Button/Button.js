@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Button.module.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 /**
  * Composant de button html
  * @param {object} props props du composant
@@ -11,7 +11,11 @@ const Button = (props) => {
   return (
     <button
       className={style.Button}
-      style={{backgroundColor:props.bgColor,color:props.color}}
+      style={{
+        backgroundColor: props.bgColor,
+        color: props.color,
+        ...props.style,
+      }}
       onClick={(evt) => {
         //evenement gerer par le composant pas renvoyé au parent
         props.onButtonClicked();
@@ -22,14 +26,15 @@ const Button = (props) => {
   );
 };
 
-Button.propTypes={
+Button.propTypes = {
   text: PropTypes.string.isRequired,
   onButtonClicked: PropTypes.func.isRequired,
   bgColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-}
-Button.defaultProps={
-  bgColor:'yellowgreen',
-  color:'white'
-}
+  style: PropTypes.object,
+};
+Button.defaultProps = {
+  bgColor: "yellowgreen",
+  color: "white",
+};
 export default Button;
