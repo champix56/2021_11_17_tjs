@@ -11,6 +11,7 @@ const Button = (props) => {
   return (
     <button
       className="Button"
+      style={{backgroundColor:props.bgColor,color:props.color}}
       onClick={(evt) => {
         //evenement gerer par le composant pas renvoyé au parent
         props.onButtonClicked();
@@ -24,5 +25,7 @@ const Button = (props) => {
 Button.propTypes={
   text: PropTypes.string.isRequired,
   onButtonClicked: PropTypes.func.isRequired,
+  bgColor: PropTypes.string,
+  color: PropTypes.string,
 }
 export default Button;
