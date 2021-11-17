@@ -10,7 +10,7 @@ function App() {
           alert("click sur button");
         }}
       />
-      <Button text="cancel" />
+      <Button text="cancel" color="red" />
       <Button
         text="User ne clique pas ICI"
         bgColor="tomato"
