@@ -1,5 +1,6 @@
 import React from "react";
 import "./Button.css";
+import PropTypes from 'prop-types';
 /**
  * Composant de button html
  * @param {object} props props du composant
@@ -20,4 +21,8 @@ const Button = (props) => {
   );
 };
 
+Button.propTypes={
+  text: PropTypes.string.isRequired,
+  onButtonClicked: PropTypes.func.isRequired,
+}
 export default Button;
