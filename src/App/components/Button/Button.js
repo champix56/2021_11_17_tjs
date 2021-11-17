@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
  * @returns component render
  */
 const Button = (props) => {
-  const [clicked, setclicked] = useState({state:false,autreValue:'Demat la bretagne'})
+  const [clicked, setClicked] = useState({state:false,autreValue:'Demat la bretagne'})
   console.log(props);
   return (
     <button
@@ -18,6 +18,10 @@ const Button = (props) => {
         ...props.style,
       }}
       onClick={(evt) => {
+        setClicked({...clicked, state:true});
+        setTimeout(()=>{
+          setClicked({...clicked, state:false});
+        },300)
         //evenement gerer par le composant pas renvoyé au parent
         props.onButtonClicked();
       }}
