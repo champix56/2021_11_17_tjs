@@ -4,9 +4,14 @@ import Button from './components/Button/Button'
 function App() {
   return (
     <div className="App">
-      <Button text="OK"/>
+      <Button text="OK" onButtonClicked={(arg)=>{
+        alert('click sur button')
+      }}/>
       <Button text="cancel"/>
-      <Button text="User ne clique pas ICI"/>
+      <Button text="User ne clique pas ICI"  onButtonClicked={(arg)=>{
+        console.log(arg)
+        alert('Le user a osé cliquer, il est vilain le user')
+      }}/>
       <Button text="Je sais que tu vas quand meme cliquer"/>
     </div>
   );
