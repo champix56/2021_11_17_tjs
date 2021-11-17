@@ -8,3 +8,5 @@ import "./Button.css";
 const Button = (props) => {
   return <button className="Button">Benjamin button</button>;
 };
+
+export default Button;
