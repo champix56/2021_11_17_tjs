@@ -1,28 +1,24 @@
-import React from "react";
-import "./App.css";
-import Button from "./components/Button/Button";
-function App() {
-  return (
-    <div className="App">
-      <Button
-        text="OK"
-        onButtonClicked={(arg) => {
-          alert("click sur button");
-        }}
-        style={{fontSize:'45pt'}}
-      />
-      <Button text="cancel" color="red" />
-      <Button
-        text="User ne clique pas ICI"
-        bgColor="tomato"
-        onButtonClicked={(arg) => {
-          console.log(arg);
-          alert("Le user a osé cliquer, il est vilain le user");
-        }}
-      />
-      <Button text="Je sais que tu vas quand meme cliquer" />
-    </div>
-  );
-}
+import React from 'react';
+import Button from './components/Button/Button'
 
+class App extends React.Component{
+  counter=0;
+  constructor(props)
+  {
+    super(props);
+  }
+  render(){
+    return <div className="App">
+          counter:{this.counter}<br/>
+          <Button text="soustraire 1" onButtonClicked={()=>{
+            this.counter--; 
+            console.log(this.counter);
+          }} bgColor="tomato"/>
+          <Button text="Ajouter 1" onButtonClicked={()=>{
+            this.counter++; 
+            console.log(this.counter);
+          }} bgColor="green"/>
+    </div>
+  }
+}
 export default App;
