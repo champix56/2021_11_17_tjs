@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Button.module.css";
 import PropTypes from "prop-types";
 /**
@@ -7,10 +7,11 @@ import PropTypes from "prop-types";
  * @returns component render
  */
 const Button = (props) => {
+  const [clicked, setclicked] = useState({state:false,autreValue:'Demat la bretagne'})
   console.log(props);
   return (
     <button
-      className={style.Button}
+      className={`${style.Button}${clicked.state?' '+style.clicked:''}`}
       style={{
         backgroundColor: props.bgColor,
         color: props.color,
