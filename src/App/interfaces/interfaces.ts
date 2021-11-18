@@ -13,6 +13,7 @@ export interface I_Meme{
     italic: boolean,
     frameX: number,
     frameY: number,
+    imageId:number,
   }
   export interface I_Image{
     id: number,
