@@ -16,7 +16,7 @@ function MemeForm(props) {
       <h1>Titre</h1>
       <input type="text" id="f_titre" placeholder="saisir titre" value={props.meme.titre} onChange={(evt) => {
         props.onMemeChange({ ...props.meme, titre: evt.target.value })
-      }}  />
+      }} />
       <hr />
       <h2>Image</h2>
       <select value={props.meme.imageId} onChange={(evt) => {
@@ -33,34 +33,34 @@ function MemeForm(props) {
       <div className={styles.half}>
         <div>
           <label htmlFor="f_x">x:</label><br />
-          <input type="number" className={styles.smallInput} value={props.meme.x}  onChange={(evt)=>{
-        props.onMemeChange({...props.meme, x: Number(evt.target.value)})
-      }}  />
+          <input type="number" className={styles.smallInput} value={props.meme.x} onChange={(evt) => {
+            props.onMemeChange({ ...props.meme, x: Number(evt.target.value) })
+          }} />
         </div>
         <div>
           <label htmlFor="f_y">y:</label><br />
-          <input type="number" className={styles.smallInput} value={props.meme.y}   onChange={(evt)=>{
-        props.onMemeChange({...props.meme, y: Number(evt.target.value)})
-      }}  />
+          <input type="number" className={styles.smallInput} value={props.meme.y} onChange={(evt) => {
+            props.onMemeChange({ ...props.meme, y: Number(evt.target.value) })
+          }} />
         </div>
       </div>
       <hr />
       <label htmlFor="f_color">Couleur</label>
-      <input type="color" id="f_color" value={props.meme.color}  onChange={(evt) => {
+      <input type="color" id="f_color" value={props.meme.color} onChange={(evt) => {
         props.onMemeChange({ ...props.meme, color: evt.target.value })
       }} />
       <div className={styles.half}>
         <div>
-        <label htmlFor="f_underline">underline:</label><br />
-        <input id="f_underline" type="checkbox" checked={props.meme.underline}  onChange={(evt) => {
-        props.onMemeChange({ ...props.meme, underline: evt.target.checked })
-      }}  />
+          <label htmlFor="f_underline">underline:</label><br />
+          <input id="f_underline" type="checkbox" checked={props.meme.underline} onChange={(evt) => {
+            props.onMemeChange({ ...props.meme, underline: evt.target.checked })
+          }} />
         </div>
         <div>
-        <label htmlFor="f_italic">italic:</label><br />
-        <input id="f_italic" type="checkbox" checked={props.meme.italic} onChange={(evt) => {
-        props.onMemeChange({ ...props.meme, italic: evt.target.checked })
-      }}  />
+          <label htmlFor="f_italic">italic:</label><br />
+          <input id="f_italic" type="checkbox" checked={props.meme.italic} onChange={(evt) => {
+            props.onMemeChange({ ...props.meme, italic: evt.target.checked })
+          }} />
         </div>
       </div>
       <div className={styles.half}>
