@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./components/Button/Button";
+import MemeViewer from "./components/MemeViewer/MemeViewer";
 
 class App extends React.Component {
   counter = 0;
@@ -7,29 +8,37 @@ class App extends React.Component {
     super(props);
     this.state = { counter: 0, value2: 0 };
   }
-  componentDidUpdate(){
-    console.log('%c%s','font-size:42pt;color:red;background-color:skyblue;border:1px solid black;text-align:center','le changement est pret et effectif'+this.state.counter)
+  componentDidUpdate() {
+    console.log(
+      "%c%s",
+      "font-size:42pt;color:red;background-color:skyblue;border:1px solid black;text-align:center",
+      "le changement est pret et effectif" + this.state.counter
+    );
   }
   render() {
     return (
       <div className="App">
-        counter:{this.state.counter}
-        <br />
-        <Button
-          text="soustraire 1"
-          onButtonClicked={() => {
-            this.setState({ counter: this.state.counter - 1 });
-            console.log(this.state);
+        <MemeViewer
+          meme={{
+            titre: "mon 1er meme",
+            text: "stop la triche",
+            x: 200,
+            y: 600,
+            fontSize: 18,
+            color: "tomato",
+            fontWeight: "200",
+            underline: true,
+            italic: true,
+            frameX: 0,
+            frameY: 0,
           }}
-          bgColor="tomato"
-        />
-        <Button
-          text="Ajouter 1"
-          onButtonClicked={() => {
-            this.setState({ counter: this.state.counter + 1 });
-            console.log(this.state);
+          image={{
+            id: 0,
+            url: "img/meme1.jpg",
+            titre: "meme1",
+            h: 778,
+            w: 736,
           }}
-          bgColor="green"
         />
       </div>
     );
