@@ -19,6 +19,7 @@ function MemeForm(props) {
       <h2>Image</h2>
       <select  >
         <option value="-1">Aucune</option>
+        {props.images.map((e,i)=><option value={e.id} >{e.titre}</option>)}
       </select>
       <hr />
       <h2>text</h2>
@@ -33,11 +34,13 @@ function MemeForm(props) {
         <Button type="reset" bgColor="tomato" text="clear" />
         <Button type="submit" bgColor="skyblue" text="save" />
       </div>
-
     </form>
   </div>;
 }
 
-MemeForm.propTypes = {};
-MemeForm.defaultProps = {};
+MemeForm.propTypes = {
+  meme: PropTypes.object.isRequired,
+  images: PropTypes.array.isRequired,
+  onMemeChange : PropTypes.func.isRequired,
+};
 export default MemeForm;
