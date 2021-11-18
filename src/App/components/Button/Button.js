@@ -34,6 +34,7 @@ const Button = (props) => {
         //evenement gerer par le composant pas renvoyé au parent
         props.onButtonClicked();
       }}
+      type={props.type}
     >
       {props.text}
     </button>
@@ -46,6 +47,7 @@ Button.propTypes = {
   bgColor: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   style: PropTypes.object,
+  type: PropTypes.string,
 };
 Button.defaultProps = {
   bgColor: "yellowgreen",
