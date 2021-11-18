@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Button.module.css";
 import PropTypes from "prop-types";
 /**
@@ -8,6 +8,16 @@ import PropTypes from "prop-types";
  */
 const Button = (props) => {
   const [clicked, setClicked] = useState({state:false,autreValue:'Demat la bretagne'})
+  useEffect(() => {
+    console.log(clicked)
+    setTimeout(()=>{
+      setClicked({...clicked, state:false});
+    },300)
+    //retourne la fonction de "willUnmount" 
+    //return () => {
+    //   cleanup
+    // }
+  }, [clicked])
   console.log(props);
   return (
     <button
@@ -19,9 +29,6 @@ const Button = (props) => {
       }}
       onClick={(evt) => {
         setClicked({...clicked, state:true});
-        setTimeout(()=>{
-          setClicked({...clicked, state:false});
-        },300)
         //evenement gerer par le composant pas renvoyé au parent
         props.onButtonClicked();
       }}
