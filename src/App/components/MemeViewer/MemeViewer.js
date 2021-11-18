@@ -1,14 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './MemeViewer.module.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "./MemeViewer.module.scss";
 
 const MemeViewer = (props) => (
-  <div className={styles.MemeViewer} data-testid="MemeViewer">
-    MemeViewer Component
-  </div>
+  <svg
+    className={styles.MemeViewer}
+    data-testid="MemeViewer"
+    viewBox={`0 0 ${props.image.w} ${props.image.h}`}
+  >
+    <image href={props.image.url} x="0" y="0" />
+    <text
+      x={props.meme.x}
+      y={props.meme.y}
+      fill={props.meme.color}
+      fontSize={props.meme.fontSize} 
+      textDecoration={props.meme.underline?'underline':'none'}
+      fontStyle={props.meme.italic?'italic':'normal'}
+      fontWeight={props.meme.fontWeight}
+      >{props.meme.text}</text>
+  </svg>
 );
 
-MemeViewer.propTypes = {};
+MemeViewer.propTypes = {
+  meme: PropTypes.object.isRequired,
+  image: PropTypes.object,
+};
 
 MemeViewer.defaultProps = {};
 
