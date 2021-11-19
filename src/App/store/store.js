@@ -34,7 +34,7 @@ function ressourceReducer(state = ressourcesInitialState, action) {
 
 export const currentInitialState = {
     titre: "",
-    text: "",
+    text: "azertyuiop",
     x: 0, y: 10,
     fontSize: 10,
     color: "#000000",
@@ -43,7 +43,7 @@ export const currentInitialState = {
     frameX: 0, frameY: 0,
     imageId: -1
 }
-const CURRENT_PUBLIC_ACTIONS = Object.freeze({
+export const CURRENT_PUBLIC_ACTIONS = Object.freeze({
     UPDATE_CURRENT: 'UPDATE_CURRENT',
     CLEAR_MEME: 'CLEAR_MEME',
     SAVE_MEME: 'SAVE_MEME'
@@ -51,11 +51,11 @@ const CURRENT_PUBLIC_ACTIONS = Object.freeze({
 const currentReducer = (state = currentInitialState, action) => {
     console.log(action.type);
     switch (action.type) {
-        case 'INIT':
-            console.log('Current a recu INIT');
-            return state;
+        // case 'INIT':
+        //     console.log('Current a recu INIT');
+        //     return state;
         case CURRENT_PUBLIC_ACTIONS.UPDATE_CURRENT:
-            return { ...action.value }
+            return { ...state,...action.value }
         case CURRENT_PUBLIC_ACTIONS.CLEAR_MEME:
             return { ...currentInitialState }
         default:
