@@ -64,7 +64,13 @@ const currentReducer = (state = currentInitialState, action) => {
 }
 
 
-const store = createStore(combineReducers({ current: currentReducer, ressources: ressourceReducer }));
+const store = createStore(
+        combineReducers({ 
+            current: currentReducer, 
+            ressources: ressourceReducer 
+        }), 
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+ );
 store.subscribe(() => {
     console.log(store.getState());
 });
