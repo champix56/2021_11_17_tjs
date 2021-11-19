@@ -1,0 +1,9 @@
+.FlowLayout {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between; 
+}
+.FlowLayout > * {
+ width: 33vh;
+  margin-left: 20px;
+}
