@@ -20,7 +20,14 @@ function ressourceReducer(state = ressourcesInitialState, action) {
         default: return state;
     }
 }
-let state = ressourceReducer(undefined, { type:RESSOURCES_PUBLIC_ACTIONS.REPLACE_IMAGES_LIST, values: [{ id: 0 }, { id: 1 }] })
-console.log(state);
-state = ressourceReducer(state, { type:RESSOURCES_PUBLIC_ACTIONS.REPLACE_MEMES_LIST, values: [{ id: 10 }, { id: 11 }] })
-console.log(state);
+
+const store=createStore(ressourceReducer);
+store.subscribe(()=>{
+    console.log(store.getState());
+});
+store.dispatch({ type:RESSOURCES_PUBLIC_ACTIONS.REPLACE_IMAGES_LIST, values: [{ id: 0 }, { id: 1 }] })
+store.dispatch({ type:RESSOURCES_PUBLIC_ACTIONS.REPLACE_MEMES_LIST, values: [{ id: 10 }, { id: 11 }] })
+store.dispatch({ type:RESSOURCES_PUBLIC_ACTIONS.ADD_MEME, value: { id: 20 }})
+
+
+export default store;
